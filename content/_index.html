@@ -1,0 +1,35 @@
+---
+# The content of the Homepage.
+# This Front Matter seems necessary to avioid "Error building site: plain HTML documents not supported".
+---
+
+<canvas id="myChart"></canvas>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const options = {
+      type: 'bar',
+      data: {
+        labels: window.siteData.chart1.map(o => o.name),
+        datasets: [
+          {
+            label: '# of Votes',
+            data: window.siteData.chart1.map(o => o.value),
+            backgroundColor: window.siteData.colors.map(o => `rgba(${o[0]}, ${o[1]}, ${o[2]}, 0.2)`),
+            borderColor: window.siteData.colors.map(o => `rgba(${o[0]}, ${o[1]}, ${o[2]}, 1)`),
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    }
+
+    new Chart('myChart', options)
+  })
+</script>
