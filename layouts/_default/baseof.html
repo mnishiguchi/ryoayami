@@ -2,11 +2,13 @@
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
   {{ partial "head" . }}
 
-  <body>
-    {{ block "header" . }}{{ partial "site-header" . }}{{end}}
+  <body data-type="{{.Type}}" data-kind="{{.Kind}}" data-is-home="{{.IsHome}}">
+    {{ block "header" . }}{{ partial "hero" . }}{{end}}
 
     {{ block "main" . }}{{ end }}
 
     {{ block "footer" . }}{{ partial "site-footer" . }}{{end}}
+
+    {{ partial "site-data" . }}
   </body>
 </html>

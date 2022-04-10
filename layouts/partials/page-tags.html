@@ -1,0 +1,6 @@
+
+{{ range .Params.tags }}
+  <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag is-black is-light">
+    {{- . -}}
+  </a>
+{{ end }}

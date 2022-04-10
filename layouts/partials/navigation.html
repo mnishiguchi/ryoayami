@@ -1,0 +1,26 @@
+<nav class="tabs is-boxed is-fullwidth">
+  <div class="container">
+    {{ if .Site.Menus.main }}
+      <ul>
+        {{ range .Site.Menus.main }}
+          <li>
+            {{/*
+            - Always exclude the home page for is-active class
+            - apply is-active class if current parmalink contains the menu URL
+            */}}
+            {{ $class_name := "" }}
+            {{ if (or (eq .URL "/") (not (in $.RelPermalink .URL))) }}
+              {{ $class_name = "navbar-item" }}
+            {{ else }}
+              {{ $class_name = "navbar-item is-active" }}
+            {{ end }}
+
+            <a href="{{ .URL }}" class="{{ $class_name }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+</nav>

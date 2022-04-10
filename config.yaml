@@ -1,20 +1,44 @@
 # https://gohugo.io/getting-started/configuration/#all-configuration-settings
-baseURL: 'https://mnishiguchi.github.io/hugo-gh-example'
-languageCode: 'en-us'
-title: 'My New Hugo Site'
+
+# Slash works for both development and production.
+baseURL: '/'
+title: 'Ryo & Ayami'
+languageCode: ja
+defaultContentLanguage: ja
+paginate: 30
+enableRobotsTXT: true
+hasCJKLanguage: true
 
 # https://gohugo.io/variables/site/#the-siteparams-variable
 params:
-  description: Sit fugiat ut velit irure elit voluptate veniam.
+  description: the blog of Ryo and Ayami
 
 # https://gohugo.io/content-management/menus/
 menu:
   main:
-    - identifier: posts
-      name: Posts
-      url: '/posts/'
+    - identifier: home
+      name: Home
+      url: '/'
+      weight: 1
+    - identifier: ryo
+      name: Ryo
+      url: '/ryo/'
       weight: 2
-    - identifier: about
-      name: About
-      url: '/about/'
+    - identifier: ayami
+      name: Ayami
+      url: '/ayami/'
       weight: 3
+
+# https://gohugo.io/content-management/image-processing/
+imaging:
+  quality: 100
+
+# https://gohugo.io/content-management/taxonomies/
+taxonomies:
+  tag: tags
+
+markup:
+  goldmark:
+    renderer:
+      # This is a workdown so that we can embed HTML tags in a markdown file.
+      # https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032

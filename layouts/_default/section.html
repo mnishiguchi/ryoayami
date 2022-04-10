@@ -1,31 +1,18 @@
+{{/*
+- https://gohugo.io/content-management/sections/
+- https://gohugo.io/templates/section-templates/
+*/}}
+
 {{ define "main" }}
 
-<section class="hero is-primary">
-  <div class="hero-body">
-    <p class="title">{{.Title}}</p>
-  </div>
-</section>
-
 <main class="container my-6 px-4">
-  {{ .Content }}
+  <div class="mb-6">
+    {{ .Content }}
+  </div>
 
   <div>
     {{ range .Paginator.Pages.ByPublishDate.Reverse }}
-    <a href="{{ .RelPermalink }}">
-      <article class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">{{ .Title }}</p>
-              <p class="subtitle is-6"><time datetime="{{ .Date }}">{{ .Date }}</time></p>
-            </div>
-          </div>
-          <div class="content">
-            {{ .Summary }}
-          </div>
-        </div>
-      </article>
-    </a>
+      {{ .Render "list_item_card" }}
     {{ end }}
   </div>
 

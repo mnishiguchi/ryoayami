@@ -1,16 +1,22 @@
 {{ define "main" }}
 
-{{ partial "site-data" . }}
-
-<section class="hero is-primary">
-  <div class="hero-body">
-    <p class="title">{{.Site.Title}}</p>
-    <p class="sibtitle">{{ .Site.Params.description }}</p>
-  </div>
-</section>
-
 <main class="container my-6 px-4">
-  <p>{{ .Content }}</p>
+  <div class="mb-6">
+    {{ .Content }}
+  </div>
+
+  <div class="has-text-centered mb-6">
+    <img src="{{ .Params.image_a }}">
+  </div>
+
+  <div class="is-flex is-justify-content-center">
+    <div style="max-width: 20rem">
+      <img src="{{ .Params.image_b }}">
+    </div>
+    <div style="max-width: 20rem">
+      <img src="{{ .Params.image_c }}">
+    </div>
+  </div>
 </main>
 
 {{ end }}

@@ -1,0 +1,17 @@
+<section class="hero is-primary">
+  <div class="hero-head">
+    {{ partial "navigation" . }}
+  </div>
+
+  <div class="hero-body">
+    <div class="has-text-centered">
+      <p class="title">
+        {{ if .IsHome }}
+          {{ .Site.Title }}
+        {{ else }}
+          {{ .Title }}
+        {{end}}
+      </p>
+    </div>
+  </div>
+</section>
