@@ -1,21 +1,20 @@
-// https://bulma.io/documentation/customize/with-node-sass/
 @charset "utf-8";
 
-$ryo-color: #b6d500;
-$ayami-color: #00ccee;
+$ryo-color: #8bc100;
+$ayami-color: #00a8c5;
 
+//
 // Update Bulma's global variables
+// See https://bulma.io/documentation/customize/variables
+//
 
-// $primary: $my-brand-color;
-// $link: $primary;
+$primary: hsl(171, 100%, 35%);
 
-// Update some of Bulma's component variables
-
-$body-background-color: #dffddf;
-
+//
 // Import only what you need from Bulma
+// See https://github.com/jgthms/bulma/tree/master/sass
+//
 
-// https://github.com/jgthms/bulma/tree/master/sass
 @import '../../node_modules/bulma/sass/utilities/_all';
 @import '../../node_modules/bulma/sass/base/_all';
 @import '../../node_modules/bulma/sass/elements/_all';
@@ -25,13 +24,17 @@ $body-background-color: #dffddf;
 @import '../../node_modules/bulma/sass/helpers/_all';
 @import '../../node_modules/bulma/sass/layout/_all';
 
+//
 // Global
+//
 
 main {
   min-height: 50vh;
 }
 
+//
 // Per-section
+//
 
 [data-type='ryo'] {
   .hero {
@@ -51,9 +54,11 @@ main {
   }
 }
 
+//
 // Pagination
+// See https://github.com/gohugoio/hugo/blob/473b6610d51d4a33ba35917f95b0d97ea78dad2b/tpl/tplimpl/embedded/templates/pagination.html#L1
+//
 
-// https://github.com/gohugoio/hugo/blob/473b6610d51d4a33ba35917f95b0d97ea78dad2b/tpl/tplimpl/embedded/templates/pagination.html#L1
 .pagination {
   margin: 3rem 0;
 }
