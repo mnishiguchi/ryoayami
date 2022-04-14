@@ -34,14 +34,23 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 題目, name: 'title', widget: 'string' }
-      - { label: 日付, name: 'date', widget: 'date' }
-      - { label: 本文, name: 'body', widget: 'markdown' }
+      - label: 題目
+        name: 'title'
+        widget: 'string'
+      - label: 日付
+        name: 'date'
+        widget: 'date'
+      - label: 本文
+        name: 'body'
+        widget: 'markdown'
       - label: タグ
         name: 'tags'
         widget: 'list'
         required: false
         field: { label: Name, name: name, widget: string }
+    sortable_fields:
+      - 'date'
+      - 'title'
   - name: 'ayami'
     label: '彩未の記事'
     folder: 'content/ayami'
@@ -50,11 +59,20 @@ collections:
     editor:
       preview: false
     fields:
-      - { label: 題目, name: 'title', widget: 'string' }
-      - { label: 日付, name: 'date', widget: 'date' }
-      - { label: 本文, name: 'body', widget: 'markdown' }
+      - label: 題目
+        name: 'title'
+        widget: 'string'
+      - label: 日付
+        name: 'date'
+        widget: 'date'
+      - label: 本文
+        name: 'body'
+        widget: 'markdown'
       - label: タグ
         name: 'tags'
         widget: 'list'
         required: false
         field: { label: Name, name: name, widget: string }
+    sortable_fields:
+      - 'date'
+      - 'title'
