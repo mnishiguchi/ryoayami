@@ -26,6 +26,53 @@ locale: 'ja'
 show_preview_links: false
 
 collections:
+  - name: pages
+    label: ページ
+    editor:
+      preview: false
+    files:
+      - file: 'content/_index.md'
+        label: ホーム
+        name: home
+        fields:
+          - label: 'identifier'
+            name: 'identifier'
+            widget: 'hidden'
+            default: 'home'
+          - label: 本文
+            name: body
+            widget: markdown
+          - label: 写真A
+            name: image_a
+            widget: image
+          - label: 写真B
+            name: image_b
+            widget: image
+          - label: 写真C
+            name: image_c
+            widget: image
+      - file: 'content/ryo/_index.md'
+        label: 遼
+        name: ryo_section
+        fields:
+          - label: 'identifier'
+            name: 'identifier'
+            widget: 'hidden'
+            default: 'ryo_section'
+          - label: 本文
+            name: body
+            widget: markdown
+      - file: 'content/ayami/_index.md'
+        label: 彩未
+        name: ayami_section
+        fields:
+          - label: 'identifier'
+            name: 'identifier'
+            widget: 'hidden'
+            default: 'ayami_section'
+          - label: 本文
+            name: body
+            widget: markdown
   - name: 'ryo'
     label: '遼の記事'
     folder: 'content/ryo'
@@ -34,6 +81,10 @@ collections:
     editor:
       preview: false
     fields:
+      - label: 'identifier'
+        name: 'identifier'
+        widget: 'hidden'
+        default: 'ryo_article'
       - label: 題目
         name: 'title'
         widget: 'string'
@@ -48,9 +99,8 @@ collections:
         widget: 'list'
         required: false
         field: { label: Name, name: name, widget: string }
-    sortable_fields:
-      - 'date'
-      - 'title'
+    filter: { field: 'identifier', value: 'ryo_article' }
+    sortable_fields: ['date', 'title']
   - name: 'ayami'
     label: '彩未の記事'
     folder: 'content/ayami'
@@ -59,6 +109,10 @@ collections:
     editor:
       preview: false
     fields:
+      - label: 'identifier'
+        name: 'identifier'
+        widget: 'hidden'
+        default: 'ayami_article'
       - label: 題目
         name: 'title'
         widget: 'string'
@@ -73,6 +127,5 @@ collections:
         widget: 'list'
         required: false
         field: { label: Name, name: name, widget: string }
-    sortable_fields:
-      - 'date'
-      - 'title'
+    filter: { field: 'identifier', value: 'ayami_article' }
+    sortable_fields: ['date', 'title']

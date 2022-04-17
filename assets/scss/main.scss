@@ -16,6 +16,10 @@ $primary: hsl(171, 100%, 35%);
 //
 
 @import '../../node_modules/bulma/sass/utilities/_all';
+
+// https://bulma.io/documentation/layout/container
+$container-max-width: 1000px + (2 * $gap);
+
 @import '../../node_modules/bulma/sass/base/_all';
 @import '../../node_modules/bulma/sass/elements/_all';
 // @import '../../node_modules/bulma/sass/form/_all';
@@ -24,12 +28,17 @@ $primary: hsl(171, 100%, 35%);
 @import '../../node_modules/bulma/sass/helpers/_all';
 @import '../../node_modules/bulma/sass/layout/_all';
 
+
 //
 // Global
 //
 
 main {
   min-height: 50vh;
+}
+
+p > img {
+  margin: 1.5rem 0;
 }
 
 //
