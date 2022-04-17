@@ -1,15 +1,19 @@
+<a href="{{ .RelPermalink }}">
   <article class="card mb-4">
     <div class="card-content">
       <div class="media">
         <div class="media-content">
           <p class="title is-4">
-            <a href="{{ .RelPermalink }}">
-              {{ .Title }}
-            </a>
+            {{ .Title }}
           </p>
           <p class="subtitle">
             {{- partial "date.html" .Date -}}
-            <span class="ml-2">{{- partial "page-tags.html" . -}}</span>
+            <span class="ml-2">
+              {{/* Nested links wont work for some reason */}}
+              {{ range .Params.tags }}
+                <span class="tag is-black is-light">{{- . -}}</span>
+              {{ end }}
+            </span>
           </p>
         </div>
       </div>
@@ -19,3 +23,4 @@
       </div>
     </div>
   </article>
+</a>
