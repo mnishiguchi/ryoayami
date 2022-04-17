@@ -11,12 +11,12 @@
 
   {{ range $key, $value := .Data.Terms }}
     <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}">
-      <h2 class="title" title="{{ $.Data.Singular | humanize }}: {{ $key | humanize }}">
+      <h2 class="tag is-black is-large mb-4" title="{{ $.Data.Singular | humanize }}: {{ $key | humanize }}">
         {{ $key | humanize }}
       </h2>
     </a>
 
-    <ul class="mb-4">
+    <ul class="mb-6">
       {{ range $value.Pages }}
         <li>
           {{ .Render "list_item_card" }}
