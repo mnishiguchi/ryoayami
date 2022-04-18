@@ -3,10 +3,10 @@
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">
+          <p class="title is-4 list-item-data--title">
             {{ .Title }}
           </p>
-          <p class="subtitle">
+          <p class="subtitle list-item-data--metadata">
             {{- partial "date.html" .Date -}}
             <span class="ml-2">
               {{/* Nested links wont work for some reason */}}
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="content">
+      <div class="content list-item-data--summary">
         {{ .Summary }}
       </div>
     </div>

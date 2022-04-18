@@ -9,21 +9,37 @@
     {{ .Content }}
   </div>
 
-  {{ range $key, $value := .Data.Terms }}
-    <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}">
-      <h2 class="tag is-black is-large mb-4" title="{{ $.Data.Singular | humanize }}: {{ $key | humanize }}">
-        {{ $key | humanize }}
-      </h2>
-    </a>
+  <div id="mn-list">
+    <input type="search" class="search input mb-5" />
 
-    <ul class="mb-6">
-      {{ range $value.Pages }}
+    <ul class="list">
+      {{ range $key, $value := .Data.Terms }}
         <li>
-          {{ .Render "list_item_card" }}
+          <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}">
+            <h2 class="tag is-black is-large mb-4 list-item-data--tag" title="{{ $.Data.Singular | humanize }}: {{ $key | humanize }}">
+              {{ $key | humanize }}
+            </h2>
+          </a>
+
+          <ul class="mb-6">
+            {{ range $value.Pages }}
+              <li>
+                {{ .Render "list_item_card" }}
+              </li>
+            {{ end }}
+          </ul>
         </li>
       {{ end }}
     </ul>
-  {{ end }}
+  </div>
 </main>
+
+<script>
+  var mnList = new ListJS('mn-list', {
+    valueNames: [
+      'list-item-data--tag'
+    ],
+  })
+</script>
 
 {{ end }}

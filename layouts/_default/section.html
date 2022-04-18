@@ -10,13 +10,27 @@
     {{ .Content }}
   </div>
 
-  <div>
-    {{ range .Paginator.Pages.ByPublishDate.Reverse }}
-      {{ .Render "list_item_card" }}
-    {{ end }}
+  <div id="mn-list">
+    <input type="search" class="search input mb-5" />
+
+    <div class="list">
+      {{ range .Paginator.Pages.ByPublishDate.Reverse }}
+        {{ .Render "list_item_card" }}
+      {{ end }}
+    </div>
   </div>
 
   {{- template "_internal/pagination.html" . -}}
 </main>
+
+<script>
+  var mnList = new ListJS('mn-list', {
+    valueNames: [
+      'list-item-data--title',
+      'list-item-data--summary',
+      'list-item-data--metadata'
+    ],
+  })
+</script>
 
 {{ end }}

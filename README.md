@@ -22,7 +22,7 @@ npm install
 
 ## Commands
 
-- `hugo server`
+- `hugo server --noHTTPCache`
   - start a development server
   - See `hugo help server`
 - `hugo`

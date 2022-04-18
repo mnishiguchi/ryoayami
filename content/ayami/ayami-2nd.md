@@ -1,7 +1,7 @@
 ---
 identifier: ayami_article
 title: "Ayami 2nd"
-date: 2022-04-11T21:54:11-04:00
+date: 2022-04-12T21:54:11-04:00
 tags:
 - 2nd
 ---
