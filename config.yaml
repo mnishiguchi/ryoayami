@@ -5,7 +5,6 @@ baseURL: '/'
 title: 'Ryo & Ayami'
 languageCode: ja
 defaultContentLanguage: ja
-paginate: 30
 enableRobotsTXT: true
 hasCJKLanguage: true
 
@@ -29,17 +28,6 @@ menu:
       url: '/ayami/'
       weight: 3
 
-# https://gohugo.io/content-management/image-processing/
-imaging:
-  quality: 100
-
 # https://gohugo.io/content-management/taxonomies/
 taxonomies:
   tag: tags
-
-markup:
-  goldmark:
-    renderer:
-      # This is a workdown so that we can embed HTML tags in a markdown file.
-      # https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032
-      # unsafe: true
