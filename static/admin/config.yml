@@ -21,7 +21,7 @@ media_folder: content/images
 public_folder: /images
 
 site_url: https://ryoayami.com
-logo_url: https://user-images.githubusercontent.com/7563926/162644222-2c19332c-d8ac-4249-b10a-18e7f50b3c8b.png
+logo_url: https://user-images.githubusercontent.com/7563926/163997976-f10f5c94-14c2-463e-a996-f09dd139f691.png
 locale: 'ja'
 show_preview_links: false
 
@@ -32,7 +32,7 @@ collections:
       preview: false
     files:
       - file: 'content/_index.md'
-        label: ホーム
+        label: Home
         name: home
         fields:
           - label: 'identifier'
@@ -52,7 +52,7 @@ collections:
             name: image_c
             widget: image
       - file: 'content/ryo/_index.md'
-        label: 遼
+        label: 遼のメイン
         name: ryo_section
         fields:
           - label: 'identifier'
@@ -63,13 +63,24 @@ collections:
             name: body
             widget: markdown
       - file: 'content/ayami/_index.md'
-        label: 彩未
+        label: 彩未のメイン
         name: ayami_section
         fields:
           - label: 'identifier'
             name: 'identifier'
             widget: 'hidden'
             default: 'ayami_section'
+          - label: 本文
+            name: body
+            widget: markdown
+      - file: 'content/about.md'
+        label: About
+        name: about
+        fields:
+          - label: 'identifier'
+            name: 'identifier'
+            widget: 'hidden'
+            default: 'about'
           - label: 本文
             name: body
             widget: markdown
