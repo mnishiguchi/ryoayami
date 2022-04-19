@@ -3,30 +3,7 @@
 $ryo-color: #8bc100;
 $ayami-color: #00a8c5;
 
-//
-// Update Bulma's global variables
-// See https://bulma.io/documentation/customize/variables
-//
-
-$primary: hsl(171, 100%, 35%);
-
-//
-// Import only what you need from Bulma
-// See https://github.com/jgthms/bulma/tree/master/sass
-//
-
-@import '../../node_modules/bulma/sass/utilities/_all';
-
-// https://bulma.io/documentation/layout/container
-$container-max-width: 1000px + (2 * $gap);
-
-@import '../../node_modules/bulma/sass/base/_all';
-@import '../../node_modules/bulma/sass/elements/_all';
-@import '../../node_modules/bulma/sass/form/_all';
-@import '../../node_modules/bulma/sass/components/_all';
-@import '../../node_modules/bulma/sass/grid/_all';
-@import '../../node_modules/bulma/sass/helpers/_all';
-@import '../../node_modules/bulma/sass/layout/_all';
+@import 'bulma';
 
 //
 // Global
@@ -34,10 +11,6 @@ $container-max-width: 1000px + (2 * $gap);
 
 main {
   min-height: 50vh;
-}
-
-p > img {
-  margin: 1.5rem 0;
 }
 
 //
