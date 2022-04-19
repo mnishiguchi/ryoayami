@@ -1,5 +1,34 @@
 <footer class="footer has-text-centered">
   <div class="content">
-    <p>&copy; {{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ now.Format "2006"}} {{ end }}</p>
+    <a href="/">
+      &copy;
+      {{ with .Site.Copyright | default .Site.Title }}
+        {{ . | safeHTML }} {{ now.Format "2006"}}
+      {{ end }}
+    </a>
+  </div>
+  <div class="container">
+    {{ if .Site.Menus.footer }}
+    <ul>
+      {{ range .Site.Menus.footer }}
+      <li>
+        {{/*
+        - Always exclude the home page for is-active class
+        - apply is-active class if current parmalink contains the menu URL
+        */}}
+        {{ $class_name := "" }}
+        {{ if (or (eq .URL "/") (not (in $.RelPermalink .URL))) }}
+          {{ $class_name = "navbar-item" }}
+        {{ else }}
+          {{ $class_name = "navbar-item is-active" }}
+        {{ end }}
+
+        <a href="{{ .URL }}" class="{{ $class_name }}">
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
   </div>
 </footer>

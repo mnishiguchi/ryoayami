@@ -27,6 +27,15 @@ menu:
       name: Ayami
       url: '/ayami/'
       weight: 3
+  footer:
+    - identifier: about
+      name: About
+      url: '/about'
+      weight: 1
+    - identifier: tags
+      name: Tags
+      url: '/tags/'
+      weight: 2
 
 # https://gohugo.io/content-management/taxonomies/
 taxonomies:
