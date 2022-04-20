@@ -9,8 +9,10 @@
     {{ .Content }}
   </div>
 
-  <div id="mn-list">
-    <input type="search" class="search input mb-5" />
+  <div id="list-search-scope">
+    <div class="mb-5">
+      {{ partial "search-form" . }}
+    </div>
 
     <ul class="list">
       {{ range $key, $value := .Data.Terms }}
@@ -35,7 +37,7 @@
 </main>
 
 <script>
-  var mnList = new ListJS('mn-list', {
+  App.initListSearch('list-search-scope', {
     valueNames: [
       'list-item-data--tag'
     ],

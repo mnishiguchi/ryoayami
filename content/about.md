@@ -10,7 +10,7 @@ date: 2022-04-02T00:00:00-04:00
 
 ### ソースコード
 
-- https://github.com/mnishiguchi/ryoayami
+https://github.com/mnishiguchi/ryoayami
 
 ### 利用した主な技術・ウェブサービス
 
