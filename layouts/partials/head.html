@@ -12,6 +12,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   {{/*
+  Hugo Internal Templates
+  - https://gohugo.io/templates/internal
+  */}}
+  {{- template "_internal/opengraph.html" . -}}
+  {{- template "_internal/schema.html" . -}}
+  {{- template "_internal/twitter_cards.html" . -}}
+
+  {{/*
     SCSS
     - https://gohugo.io/hugo-pipes/scss-sass/
     - https://github.com/luizdepra/hugo-coder/blob/29a7a942b7c6e494dd8cfb941f0950504769528c/layouts/_default/baseof.html#L29-L37
