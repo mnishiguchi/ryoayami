@@ -5,8 +5,6 @@
   <body data-type="{{.Type}}" data-kind="{{.Kind}}" data-is-home="{{.IsHome}}">
     {{ partial "site-data" . }}
 
-    {{ block "header" . }}{{ partial "hero" . }}{{end}}
-
     {{ block "main" . }}{{ end }}
 
     {{ block "footer" . }}{{ partial "site-footer" . }}{{end}}

@@ -10,7 +10,7 @@ Culpa Lorem voluptate non velit consequat reprehenderit mollit ut adipisicing al
 
 <!--more-->
 
-![](/images/kumano-shishiiwa.jpg)
+![](/images/ryo-kisha.jpg)
 
 
 Reprehenderit eiusmod Lorem adipisicing in culpa enim adipisicing dolore irure ipsum sit cupidatat excepteur.
