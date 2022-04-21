@@ -3,9 +3,7 @@
 {{ partial "hero" . }}
 
 <main class="container my-6 px-4">
-  <div class="mb-6 content">
-    {{ .Content }}
-  </div>
+  <div class="mb-5 content">{{ .Content }}</div>
 
   {{ range .Params.tags }}
     {{ partial "tag-link" . }}

@@ -6,12 +6,10 @@
 
 {{ partial "hero" . }}
 
-<main class="container my-6 px-4">
-  <div class="mb-6 content">
-    {{ .Content }}
-  </div>
+<main class="container mb-6 px-4">
+  <div class="mb-5 content">{{ .Content }}</div>
 
-  <div id="list-search-scope">
+  <div id="list-search-scope" class="mt-5">
     <div class="mb-5">
       {{ partial "search-form" . }}
     </div>
