@@ -8,16 +8,21 @@
             - Always exclude the home page for is-active class
             - apply is-active class if current parmalink contains the menu URL
             */}}
-            {{ $class_name := "" }}
+            {{ $link_class := "" }}
+
             {{ if (or (eq .URL "/") (not (in $.RelPermalink .URL))) }}
-              {{ $class_name = "navbar-item" }}
+              {{ $link_class = "navbar-item" }}
             {{ else }}
-              {{ $class_name = "navbar-item is-active" }}
+              {{ $link_class = "navbar-item is-active" }}
             {{ end }}
 
-            <a href="{{ .URL }}" class="{{ $class_name }}">
-              {{ .Name }}
-            </a>
+            <a href="{{ .URL }}" class="{{ $link_class }}">
+              {{ if eq .URL "/" }}
+                <span><ion-icon name="home-outline"></ion-icon></span>
+              {{ else }}
+                {{ .Name }}
+              {{ end }}
+              </a>
           </li>
         {{ end }}
       </ul>
