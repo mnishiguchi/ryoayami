@@ -3,13 +3,15 @@
     <div class="card-content">
       <div class="media mb-2">
         <div class="media-content">
-          <div class="has-text-grey">{{- partial "date.html" .Date -}}</div>
+          <div class="has-text-grey list-item-data--date">
+            {{- partial "date.html" .Date -}}
+          </div>
           <p class="title is-4 list-item-data--title">
             {{ .Title }}
           </p>
           {{ if ne .Params.tags nil }}
-            <p class="subtitle list-item-data--metadata">
-              <span class="mr-2">
+            <p class="subtitle">
+              <span class="mr-2 list-item-data--tags">
                 {{/* Nested links wont work for some reason */}}
                 {{ range .Params.tags }}
                   {{ partial "tag" . }}

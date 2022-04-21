@@ -1,15 +1,10 @@
-{{/*
-- https://gohugo.io/content-management/sections/
-- https://gohugo.io/templates/section-templates/
-*/}}
-
 {{ define "main" }}
 
-<main class="container my-6 px-4">
-  <div class="mb-6 content">
-    {{ .Content }}
-  </div>
+{{/*
+- Example URL: /tag/hello
+*/}}
 
+<main class="container my-6 px-4">
   <div id="list-search-scope">
     <div class="mb-5">
       {{ partial "search-form" . }}
