@@ -5,7 +5,9 @@
     {{ .Content }}
   </div>
 
-  {{- partial "page-tags.html" . -}}
+  {{ range .Params.tags }}
+    {{ partial "tag-link" . }}
+  {{ end }}
 </main>
 
 {{ end }}
